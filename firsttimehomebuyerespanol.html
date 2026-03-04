@@ -1,0 +1,1330 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Guía para compradores primerizos, Rose Zaldivar</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --purple:#1e0126;
+      --gold:#d4af37;
+      --text:#111111;
+      --muted:rgba(0,0,0,0.62);
+      --paper:#ffffff;
+      --line:rgba(0,0,0,0.12);
+      --radius:10px;
+      --pad:32px;
+      --pad-lg:48px;
+      --max:980px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      background:#f4f4f6;
+      color:var(--text);
+      font-family:"Outfit",system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      line-height:1.35;
+    }
+
+    .topbar{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(244,244,246,0.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid rgba(0,0,0,0.08);
+    }
+    .topbar-inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:12px 16px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .hint{
+      font-size:13px;
+      color:var(--muted);
+    }
+    .btn{
+      appearance:none;
+      border:1px solid rgba(0,0,0,0.18);
+      background:#fff;
+      color:#111;
+      padding:10px 12px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .btn.primary{
+      border-color:rgba(212,175,55,0.55);
+      background:linear-gradient(180deg, rgba(212,175,55,0.98), rgba(212,175,55,0.88));
+      color:#140018;
+    }
+    .btn:active{ transform:translateY(1px); }
+
+    .wrap{
+      max-width:var(--max);
+      margin:18px auto 40px;
+      padding:0 16px;
+    }
+
+    .page{
+      width:100%;
+      background:var(--paper);
+      border:1px solid rgba(0,0,0,0.10);
+      border-radius:16px;
+      overflow:hidden;
+      margin:18px auto;
+      box-shadow:0 10px 30px rgba(0,0,0,0.06);
+    }
+
+    .page-inner{
+      display:grid;
+      grid-template-columns: 260px 1fr;
+      min-height: 1056px;
+    }
+
+    .sidebar{
+      background:var(--purple);
+      color:#fff;
+      padding:var(--pad-lg) var(--pad);
+      position:relative;
+    }
+
+    .mark{
+      width:76px;
+      height:76px;
+      border:2px solid var(--gold);
+      border-radius:999px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      margin-bottom:18px;
+      background:transparent;
+      user-select:none;
+    }
+    .mark span{
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-weight:700;
+      letter-spacing:0.12em;
+      font-size:22px;
+      color:#fff;
+      transform:translateX(2px);
+    }
+
+    .side-title{
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:22px;
+      font-weight:700;
+      margin:0 0 10px;
+      color:#fff;
+    }
+
+    .side-sub{
+      margin:0 0 20px;
+      color:rgba(255,255,255,0.78);
+      font-size:13px;
+    }
+
+    .steps{
+      margin-top:18px;
+      padding-left:0;
+      list-style:none;
+    }
+    .step{
+      display:grid;
+      grid-template-columns: 18px 1fr;
+      gap:10px;
+      align-items:start;
+      margin:12px 0;
+    }
+    .dot{
+      width:12px;
+      height:12px;
+      border-radius:999px;
+      border:2px solid rgba(212,175,55,0.9);
+      margin-top:4px;
+      background:transparent;
+    }
+    .dot.active{
+      background:var(--gold);
+      box-shadow:0 0 0 4px rgba(212,175,55,0.18);
+    }
+    .step h4{
+      margin:0;
+      font-size:13px;
+      font-weight:700;
+      letter-spacing:0.02em;
+    }
+    .step p{
+      margin:4px 0 0;
+      font-size:12px;
+      color:rgba(255,255,255,0.72);
+    }
+
+    .side-footer{
+      position:absolute;
+      left:var(--pad);
+      right:var(--pad);
+      bottom:var(--pad-lg);
+      font-size:11px;
+      color:rgba(255,255,255,0.70);
+    }
+    .side-footer .line{
+      height:1px;
+      background:rgba(212,175,55,0.25);
+      margin:14px 0;
+    }
+
+    .content{
+      padding:var(--pad-lg);
+    }
+
+    .kicker{
+      font-size:12px;
+      color:var(--muted);
+      letter-spacing:0.12em;
+      text-transform:uppercase;
+      margin:0 0 10px;
+    }
+
+    .h1{
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:40px;
+      font-weight:700;
+      margin:0 0 10px;
+      line-height:1.05;
+    }
+
+    .h2{
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:26px;
+      font-weight:700;
+      margin:0 0 10px;
+    }
+
+    .lead{
+      font-size:15px;
+      color:var(--text);
+      margin:0 0 18px;
+    }
+
+    .muted{ color:var(--muted); }
+
+    .card{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:16px;
+      margin:14px 0;
+      background:#fff;
+    }
+
+    .callout{
+      border:1px solid rgba(212,175,55,0.55);
+      border-left:6px solid var(--gold);
+      border-radius:var(--radius);
+      padding:14px 14px 14px 12px;
+      background:rgba(212,175,55,0.08);
+      margin:14px 0;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:14px;
+    }
+
+    .table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      overflow:hidden;
+      border-radius:var(--radius);
+      border:1px solid var(--line);
+      margin:10px 0 0;
+    }
+    .table th, .table td{
+      padding:12px 12px;
+      border-bottom:1px solid var(--line);
+      border-right:1px solid var(--line);
+      vertical-align:top;
+      font-size:13px;
+    }
+    .table th{
+      background:rgba(30,1,38,0.06);
+      font-weight:700;
+    }
+    .table tr:last-child td{ border-bottom:none; }
+    .table th:last-child, .table td:last-child{ border-right:none; }
+
+    .checklist{
+      margin:8px 0 0;
+      padding-left:18px;
+    }
+    .checklist li{
+      margin:8px 0;
+      font-size:13px;
+    }
+
+    .pill{
+      display:inline-block;
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid rgba(212,175,55,0.55);
+      background:rgba(212,175,55,0.10);
+      font-size:12px;
+      font-weight:700;
+      color:#2b0a33;
+    }
+
+    .timeline{
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:14px;
+      margin:14px 0;
+    }
+    .timeline-row{
+      display:grid;
+      grid-template-columns: 150px 1fr;
+      gap:12px;
+      padding:10px 0;
+      border-bottom:1px solid var(--line);
+    }
+    .timeline-row:last-child{ border-bottom:none; }
+    .timeline-row .when{
+      font-weight:700;
+      font-size:13px;
+    }
+    .timeline-row .what{
+      font-size:13px;
+      color:var(--text);
+    }
+
+    .cover .page-inner{ grid-template-columns: 1fr; }
+    .cover .cover-block{
+      background:var(--purple);
+      color:#fff;
+      min-height:1056px;
+      padding:72px 56px;
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+    .cover .title{
+      font-family:"Cormorant Garamond",Georgia,serif;
+      font-size:58px;
+      font-weight:700;
+      line-height:1.02;
+      margin:18px 0 10px;
+      color:var(--gold);
+    }
+    .cover .subtitle{
+      font-size:16px;
+      color:rgba(255,255,255,0.85);
+      max-width:660px;
+    }
+    .cover .meta{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      align-items:center;
+      margin-top:18px;
+    }
+    .cover .meta .tag{
+      border:1px solid rgba(212,175,55,0.40);
+      color:rgba(255,255,255,0.90);
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:12px;
+      letter-spacing:0.10em;
+      text-transform:uppercase;
+    }
+    .cover .mark{
+      width:92px;
+      height:92px;
+      margin-bottom:22px;
+    }
+    .cover .mark span{
+      font-size:26px;
+    }
+
+    .footer-note{
+      margin-top:26px;
+      font-size:11px;
+      color:var(--muted);
+    }
+
+    @media (max-width: 860px){
+      .page-inner{ grid-template-columns: 1fr; }
+      .sidebar{ padding:28px; }
+      .content{ padding:28px; }
+      .grid2{ grid-template-columns: 1fr; }
+    }
+
+    @media print{
+      body{ background:#fff; }
+      .topbar{ display:none; }
+      .wrap{ max-width:none; padding:0; margin:0; }
+      .page{
+        margin:0;
+        border:none;
+        border-radius:0;
+        box-shadow:none;
+        page-break-after:always;
+      }
+      .page:last-child{ page-break-after:auto; }
+      .page-inner{ min-height:auto; }
+    }
+
+    @page{
+      size: Letter;
+      margin: 0.5in;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <div class="hint">
+        Para descargar en PDF, haga clic en Imprimir y seleccione Guardar como PDF.
+      </div>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <button class="btn primary" onclick="window.print()">Imprimir o guardar como PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+
+    <!-- PÁGINA 1: PORTADA -->
+    <section class="page cover">
+      <div class="page-inner">
+        <div class="cover-block">
+          <div>
+            <div class="mark" aria-label="RZC">
+              <span>RZC</span>
+            </div>
+
+            <div class="kicker" style="color:rgba(255,255,255,0.75);">
+              Guía para compradores primerizos
+            </div>
+
+            <div class="title">
+              El camino moderno hacia su casa
+            </div>
+
+            <div class="subtitle">
+              Una guía paso a paso para planificar, comprar y cerrar con confianza. Úsela como lista de verificación, referencia y mapa desde el día uno hasta su mudanza.
+            </div>
+
+            <div class="meta">
+              <div class="tag">Houston y alrededores</div>
+              <div class="tag">Edición 2026</div>
+              <div class="tag">Preparado por Rose Zaldivar</div>
+            </div>
+          </div>
+
+          <div style="display:flex; justify-content:space-between; gap:18px; flex-wrap:wrap; align-items:flex-end;">
+            <div>
+              <div style="font-size:12px; color:rgba(255,255,255,0.75); letter-spacing:0.12em; text-transform:uppercase;">
+                Agente
+              </div>
+              <div style="font-size:16px; font-weight:700; color:#fff;">
+                Rose Zaldivar
+              </div>
+              <div style="font-size:12px; color:rgba(255,255,255,0.75);">
+                Brokered by The Agency Team
+              </div>
+            </div>
+
+            <div style="text-align:right;">
+              <div style="font-size:12px; color:rgba(255,255,255,0.75); letter-spacing:0.12em; text-transform:uppercase;">
+                Contacto
+              </div>
+              <div style="font-size:14px; font-weight:700; color:#fff;">
+                346 303 0139
+              </div>
+              <div style="font-size:12px; color:rgba(255,255,255,0.75);">
+                Richmond, Fulshear, Cinco Ranch
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PÁGINA 2 -->
+    <section class="page">
+      <div class="page-inner">
+        <aside class="sidebar">
+          <div class="mark" aria-label="RZC">
+            <span>RZC</span>
+          </div>
+          <h3 class="side-title">Mapa del proceso</h3>
+          <p class="side-sub">6 fases claras, desde la preparación hasta las llaves.</p>
+
+          <ul class="steps">
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Preparación</h4>
+                <p>Crédito, ahorros, presupuesto y prioridades.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot"></div>
+              <div>
+                <h4>Preaprobación</h4>
+                <p>Opciones de préstamo y estrategia con su prestamista.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot"></div>
+              <div>
+                <h4>Búsqueda</h4>
+                <p>Zonas, requisitos y visitas.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot"></div>
+              <div>
+                <h4>Oferta</h4>
+                <p>Precio, términos, contingencias y negociación.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot"></div>
+              <div>
+                <h4>Debida diligencia</h4>
+                <p>Inspección, avalúo, título y underwriting.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot"></div>
+              <div>
+                <h4>Cierre</h4>
+                <p>Recorrido final, fondos, firma y llaves.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="side-footer">
+            <div class="line"></div>
+            <div>
+              Esta guía es educativa. No sustituye asesoría legal, fiscal o crediticia.
+            </div>
+          </div>
+        </aside>
+
+        <main class="content">
+          <p class="kicker">Bienvenida</p>
+          <h1 class="h1">Usted está más cerca de lo que cree</h1>
+          <p class="lead">
+            Comprar su primera casa se siente grande porque lo es. El proceso se vuelve simple cuando sigue el orden correcto y evita errores comunes. Esta guía lo divide en pasos claros y fáciles de seguir.
+          </p>
+
+          <div class="card">
+            <div class="pill">Cómo usar esta guía</div>
+            <ul class="checklist">
+              <li>Úsela como lista de verificación por fases.</li>
+              <li>Llévela a llamadas con prestamista, visitas y el recorrido final.</li>
+              <li>Haga preguntas temprano para resolver todo antes de las fechas límite.</li>
+            </ul>
+          </div>
+
+          <div class="grid2">
+            <div class="callout">
+              <div style="font-weight:700; margin-bottom:6px;">Consejo clave</div>
+              <div>
+                Mantenga sus finanzas estables. Evite abrir crédito nuevo, cambiar de trabajo o hacer compras grandes hasta después del cierre.
+              </div>
+            </div>
+
+            <div class="callout">
+              <div style="font-weight:700; margin-bottom:6px;">Su agente</div>
+              <div>
+                Rose Zaldivar. Brokered by The Agency Team. 346 303 0139.
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-note">
+            Tamaño recomendado. Carta. Imprimir. Guardar como PDF.
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- PÁGINA 3 -->
+    <section class="page">
+      <div class="page-inner">
+        <aside class="sidebar">
+          <div class="mark" aria-label="RZC">
+            <span>RZC</span>
+          </div>
+          <h3 class="side-title">Fase 1</h3>
+          <p class="side-sub">Preparación</p>
+
+          <ul class="steps">
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Plan de crédito</h4>
+                <p>Puntaje, utilización e historial.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Plan de ahorros</h4>
+                <p>Down payment, costos de cierre, reservas.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Plan de presupuesto</h4>
+                <p>Pago mensual cómodo y límites.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="side-footer">
+            <div class="line"></div>
+            <div>Zonas de servicio. Richmond, Fulshear, Cinco Ranch.</div>
+          </div>
+        </aside>
+
+        <main class="content">
+          <p class="kicker">Fase 1</p>
+          <h2 class="h2">Base financiera</h2>
+          <p class="lead">
+            Esta fase define sus opciones. Buen crédito y ahorros estables ayudan a obtener mejores tasas, un underwriting más fluido y ofertas más fuertes.
+          </p>
+
+          <div class="grid2">
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Lista de crédito</div>
+              <ul class="checklist">
+                <li>Revise sus reportes de crédito y dispute errores.</li>
+                <li>Mantenga la utilización bajo 30 por ciento. Menos es mejor.</li>
+                <li>Evite pagos tardíos. Active autopago mínimo.</li>
+                <li>No cierre cuentas antiguas salvo recomendación del prestamista.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Lista de ahorros</div>
+              <ul class="checklist">
+                <li>Planifique su down payment.</li>
+                <li>Planifique costos de cierre, a menudo 2 a 5 por ciento del préstamo.</li>
+                <li>Planifique reservas, a menudo 3 a 6 meses de gastos.</li>
+                <li>Evite depósitos en efectivo, mantenga fondos verificables.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <div style="font-weight:700; margin-bottom:6px;">Regla simple de presupuesto</div>
+            <div>
+              Elija un pago mensual que le deje espacio para ahorrar, pagar servicios y cubrir mantenimiento. Su número cómodo importa más que el máximo aprobado.
+            </div>
+          </div>
+
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Gasto</th>
+                <th>Rango típico</th>
+                <th>Qué cubre</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Earnest money</td>
+                <td>1 a 3 por ciento del precio</td>
+                <td>Depósito de buena fe en escrow. Se acredita al cierre.</td>
+              </tr>
+              <tr>
+                <td>Inspección</td>
+                <td>500 a 1,000</td>
+                <td>Evaluación profesional del estado y sistemas.</td>
+              </tr>
+              <tr>
+                <td>Avalúo</td>
+                <td>Varía según el prestamista</td>
+                <td>Confirma valor para el banco. Requisito común.</td>
+              </tr>
+              <tr>
+                <td>Costos de cierre</td>
+                <td>2 a 5 por ciento del préstamo</td>
+                <td>Gastos del prestamista, título, escrow, prepagos y registro.</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="footer-note">
+            Para personalizar esta guía a su ciudad, rango de precio y tipo de préstamo, llame o envíe texto al 346 303 0139.
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- PÁGINA 4 -->
+    <section class="page">
+      <div class="page-inner">
+        <aside class="sidebar">
+          <div class="mark" aria-label="RZC">
+            <span>RZC</span>
+          </div>
+          <h3 class="side-title">Fase 2</h3>
+          <p class="side-sub">Preaprobación</p>
+
+          <ul class="steps">
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Estrategia de préstamo</h4>
+                <p>Elija lo que mejor se ajuste a su perfil.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Documentos</h4>
+                <p>Reúna, verifique y organice.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Carta de preaprobación</h4>
+                <p>Ofertas más fuertes y proceso más rápido.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="side-footer">
+            <div class="line"></div>
+            <div>Preguntas. Texto o llamada. 346 303 0139.</div>
+          </div>
+        </aside>
+
+        <main class="content">
+          <p class="kicker">Fase 2</p>
+          <h2 class="h2">Préstamo, claro y simple</h2>
+          <p class="lead">
+            La preaprobación significa que el prestamista revisó documentos y confirmó cuánto puede financiar. Esto fortalece su oferta porque usted se ve listo.
+          </p>
+
+          <div class="card">
+            <div style="font-weight:700; margin-bottom:8px;">Precalificación vs preaprobación</div>
+            <div>
+              La precalificación es una estimación. La preaprobación es un expediente revisado con documentos verificados. Para comprar en serio, use preaprobación.
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Opciones comunes</div>
+              <ul class="checklist">
+                <li>Convencional. Suele ser mejor con crédito más fuerte.</li>
+                <li>FHA. Menor down payment. Con seguro hipotecario.</li>
+                <li>VA. Para veteranos elegibles.</li>
+                <li>USDA. Para zonas elegibles. Hay límites de ingreso.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Lista de documentos</div>
+              <ul class="checklist">
+                <li>Identificación, talones de pago, W-2 o taxes.</li>
+                <li>Estados de cuenta, prueba de fondos.</li>
+                <li>Historial laboral y verificación.</li>
+                <li>Cartas explicativas si el prestamista lo pide.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <div style="font-weight:700; margin-bottom:6px;">Decisiones clave</div>
+            <div>
+              Definir su tope de precio, su pago mensual cómodo y su estrategia de oferta según su preaprobación.
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- PÁGINA 5 -->
+    <section class="page">
+      <div class="page-inner">
+        <aside class="sidebar">
+          <div class="mark" aria-label="RZC">
+            <span>RZC</span>
+          </div>
+          <h3 class="side-title">Fase 3</h3>
+          <p class="side-sub">Búsqueda</p>
+
+          <ul class="steps">
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Zonas</h4>
+                <p>Traslado, estilo de vida y valor futuro.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Criterios</h4>
+                <p>Imprescindibles vs deseables.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Plan de visitas</h4>
+                <p>Lista corta y agenda eficiente.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="side-footer">
+            <div class="line"></div>
+            <div>Brokered by The Agency Team.</div>
+          </div>
+        </aside>
+
+        <main class="content">
+          <p class="kicker">Fase 3</p>
+          <h2 class="h2">Defina su búsqueda</h2>
+          <p class="lead">
+            Una búsqueda clara ahorra tiempo. Usted compara más rápido cuando sus criterios están por escrito.
+          </p>
+
+          <div class="grid2">
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:6px;">Imprescindibles</div>
+              <div class="muted" style="font-size:13px; margin-bottom:10px;">No negociables.</div>
+              <ul class="checklist">
+                <li>Dormitorios mínimos</li>
+                <li>Baños mínimos</li>
+                <li>Zonas preferidas</li>
+                <li>Máximo de traslado</li>
+                <li>Otras prioridades</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:6px;">Deseables</div>
+              <div class="muted" style="font-size:13px; margin-bottom:10px;">Bonos si el precio y el estado lo permiten.</div>
+              <ul class="checklist">
+                <li>Patio grande</li>
+                <li>Oficina</li>
+                <li>Cocina actualizada</li>
+                <li>Garaje</li>
+                <li>Otros deseos</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="font-weight:700; margin-bottom:8px;">Puntaje de vecindarios</div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Zona</th>
+                  <th>Por qué encaja</th>
+                  <th>Puntos a revisar</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Richmond</td>
+                  <td>Estilo de vida y acceso</td>
+                  <td>Impuestos, HOA, zona de inundación, tráfico</td>
+                </tr>
+                <tr>
+                  <td>Fulshear</td>
+                  <td>Crecimiento y casas nuevas</td>
+                  <td>Inventario, tiempos de traslado</td>
+                </tr>
+                <tr>
+                  <td>Cinco Ranch</td>
+                  <td>Servicios y escuelas</td>
+                  <td>Competencia, precio</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- PÁGINA 6 -->
+    <section class="page">
+      <div class="page-inner">
+        <aside class="sidebar">
+          <div class="mark" aria-label="RZC">
+            <span>RZC</span>
+          </div>
+          <h3 class="side-title">Fase 4</h3>
+          <p class="side-sub">Oferta</p>
+
+          <ul class="steps">
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Precio y términos</h4>
+                <p>Que la oferta tenga sentido.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Contingencias</h4>
+                <p>Inspección, financiamiento, avalúo.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Negociación</h4>
+                <p>Concesiones, reparaciones, créditos.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="side-footer">
+            <div class="line"></div>
+            <div>Estrategia de oferta. 346 303 0139.</div>
+          </div>
+        </aside>
+
+        <main class="content">
+          <p class="kicker">Fase 4</p>
+          <h2 class="h2">La oferta, con estrategia</h2>
+          <p class="lead">
+            Una oferta fuerte no es solo el precio. Los términos, el tiempo y la evidencia de preparación suelen ganar.
+          </p>
+
+          <div class="grid2">
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Partes clave</div>
+              <ul class="checklist">
+                <li>Precio y fecha de cierre.</li>
+                <li>Earnest money y duración del option period.</li>
+                <li>Tipo de financiamiento y carta de preaprobación.</li>
+                <li>Concesiones del vendedor y enfoque de reparaciones.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Contingencias comunes</div>
+              <ul class="checklist">
+                <li>Inspección</li>
+                <li>Financiamiento</li>
+                <li>Avalúo</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="timeline">
+            <div style="font-weight:700; margin-bottom:10px;">Cronograma típico</div>
+            <div class="timeline-row">
+              <div class="when">Día 1</div>
+              <div class="what">Envío de oferta con documentos y fechas claras.</div>
+            </div>
+            <div class="timeline-row">
+              <div class="when">Día 1 a 3</div>
+              <div class="what">Negociación de precio, créditos, reparaciones y fecha de cierre.</div>
+            </div>
+            <div class="timeline-row">
+              <div class="when">Tras aceptación</div>
+              <div class="what">Depósito de earnest money y programación de inspecciones.</div>
+            </div>
+          </div>
+
+          <div class="callout">
+            <div style="font-weight:700; margin-bottom:6px;">Mi enfoque</div>
+            <div>
+              Ajusto términos a la casa, al vendedor y al mercado para que usted esté protegido y competitivo.
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- PÁGINA 7 -->
+    <section class="page">
+      <div class="page-inner">
+        <aside class="sidebar">
+          <div class="mark" aria-label="RZC">
+            <span>RZC</span>
+          </div>
+          <h3 class="side-title">Fase 5</h3>
+          <p class="side-sub">Debida diligencia</p>
+
+          <ul class="steps">
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Inspección</h4>
+                <p>Condición, seguridad y sistemas.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Renegociación</h4>
+                <p>Reparaciones, créditos, ajustes.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Decisión</h4>
+                <p>Seguir, renegociar o salir.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="side-footer">
+            <div class="line"></div>
+            <div>Envíe fotos y preguntas. 346 303 0139.</div>
+          </div>
+        </aside>
+
+        <main class="content">
+          <p class="kicker">Fase 5</p>
+          <h2 class="h2">Inspección y cómo leer el reporte</h2>
+          <p class="lead">
+            La inspección no es un aprobado o reprobado. Es un reporte de riesgos y costos. Usted decide qué acepta, qué pide ajustar y qué rompe el trato.
+          </p>
+
+          <div class="grid2">
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Inspecciones comunes</div>
+              <ul class="checklist">
+                <li>Inspección general</li>
+                <li>Termitas o plagas</li>
+                <li>Sewer scope cuando aplica</li>
+                <li>Especialistas cuando se necesita</li>
+              </ul>
+            </div>
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Cómo lo revisamos</div>
+              <ul class="checklist">
+                <li>Separar cosmético de seguridad y sistemas.</li>
+                <li>Estimar costos de items grandes.</li>
+                <li>Priorizar créditos en reparaciones caras.</li>
+                <li>Cuidar fechas límite para proteger su contrato.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <div style="font-weight:700; margin-bottom:6px;">Opciones de negociación</div>
+            <div>
+              Pedir reparaciones, pedir crédito, pedir ajuste de precio o aceptar as-is. La mejor opción depende de la casa y los términos.
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="font-weight:700; margin-bottom:10px;">Tabla de prioridades</div>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Hallazgo</th>
+                  <th>Nivel de riesgo</th>
+                  <th>Acción</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Techo</td>
+                  <td>Alto, Medio, Bajo</td>
+                  <td>Crédito, reparación, aceptar</td>
+                </tr>
+                <tr>
+                  <td>HVAC</td>
+                  <td>Alto, Medio, Bajo</td>
+                  <td>Servicio, crédito, reemplazo</td>
+                </tr>
+                <tr>
+                  <td>Plomería</td>
+                  <td>Alto, Medio, Bajo</td>
+                  <td>Reparación solicitada</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- PÁGINA 8 -->
+    <section class="page">
+      <div class="page-inner">
+        <aside class="sidebar">
+          <div class="mark" aria-label="RZC">
+            <span>RZC</span>
+          </div>
+          <h3 class="side-title">Fase 5</h3>
+          <p class="side-sub">Avalúo y underwriting</p>
+
+          <ul class="steps">
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Avalúo</h4>
+                <p>Confirma valor para el banco.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Underwriting</h4>
+                <p>Revisión final del expediente.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Clear to close</h4>
+                <p>Aprobación final y agenda de cierre.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="side-footer">
+            <div class="line"></div>
+            <div>Evite cambios financieros hasta cerrar.</div>
+          </div>
+        </aside>
+
+        <main class="content">
+          <p class="kicker">Fase 5</p>
+          <h2 class="h2">Avalúo y underwriting</h2>
+          <p class="lead">
+            La mayoría de los temas se resuelven con respuesta rápida. El objetivo es proteger su fecha y mantener su aprobación en curso.
+          </p>
+
+          <div class="grid2">
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Si el avalúo sale bajo</div>
+              <ul class="checklist">
+                <li>Renegociar el precio con el vendedor.</li>
+                <li>Revisar comparables con su agente y prestamista.</li>
+                <li>Aportar efectivo solo si tiene sentido.</li>
+                <li>Salir si los números ya no funcionan y su contrato lo permite.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Underwriting: haga y no haga</div>
+              <ul class="checklist">
+                <li>Responda solicitudes del banco rápido.</li>
+                <li>Mantenga fondos documentados.</li>
+                <li>No abra crédito nuevo.</li>
+                <li>No mueva grandes sumas sin consultar.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <div style="font-weight:700; margin-bottom:6px;">Regla de velocidad</div>
+            <div>
+              Si el prestamista pide un documento, envíelo el mismo día cuando sea posible. Los retrasos son la causa más común de cambios de fecha.
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- PÁGINA 9 -->
+    <section class="page">
+      <div class="page-inner">
+        <aside class="sidebar">
+          <div class="mark" aria-label="RZC">
+            <span>RZC</span>
+          </div>
+          <h3 class="side-title">Fase 6</h3>
+          <p class="side-sub">Cierre</p>
+
+          <ul class="steps">
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Recorrido final</h4>
+                <p>Confirmar condición y reparaciones.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Fondos</h4>
+                <p>Wire y verificación.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Firma</h4>
+                <p>Documentos, llaves, siguientes pasos.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="side-footer">
+            <div class="line"></div>
+            <div>Antifraude. Verifique wire por teléfono.</div>
+          </div>
+        </aside>
+
+        <main class="content">
+          <p class="kicker">Fase 6</p>
+          <h2 class="h2">Lista maestra para el día de cierre</h2>
+          <p class="lead">
+            El cierre es simple cuando usted se prepara con tiempo. Use esta lista la semana del cierre y otra vez en el recorrido final.
+          </p>
+
+          <div class="grid2">
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Recorrido final</div>
+              <ul class="checklist">
+                <li>Probar llaves de agua, baños y presión.</li>
+                <li>Encender HVAC y revisar ventilas.</li>
+                <li>Probar electrodomésticos incluidos.</li>
+                <li>Confirmar reparaciones acordadas.</li>
+                <li>Verificar que la casa esté como se esperaba.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Fondos y documentos</div>
+              <ul class="checklist">
+                <li>Confirmar instrucciones de wire con número verificado.</li>
+                <li>Llevar identificación vigente.</li>
+                <li>Revisar Closing Disclosure con tiempo.</li>
+                <li>Seguro de vivienda listo si se requiere.</li>
+                <li>Documentos extra si el banco los solicita.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <div style="font-weight:700; margin-bottom:6px;">Acompañamiento</div>
+            <div>
+              Yo le acompaño en coordinación, recorrido final y cierre. Llame o envíe texto al 346 303 0139.
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+    <!-- PÁGINA 10 -->
+    <section class="page">
+      <div class="page-inner">
+        <aside class="sidebar">
+          <div class="mark" aria-label="RZC">
+            <span>RZC</span>
+          </div>
+          <h3 class="side-title">Siguientes pasos</h3>
+          <p class="side-sub">Después de recibir las llaves.</p>
+
+          <ul class="steps">
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Plan de mudanza</h4>
+                <p>Servicios, cerraduras y esenciales.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Mantenimiento</h4>
+                <p>Proteja su casa y su presupuesto.</p>
+              </div>
+            </li>
+            <li class="step">
+              <div class="dot active"></div>
+              <div>
+                <h4>Largo plazo</h4>
+                <p>Equidad, valor y metas futuras.</p>
+              </div>
+            </li>
+          </ul>
+
+          <div class="side-footer">
+            <div class="line"></div>
+            <div>Rose Zaldivar. 346 303 0139.</div>
+          </div>
+        </aside>
+
+        <main class="content">
+          <p class="kicker">Página 10</p>
+          <h2 class="h2">Listo. Ahora proteja su inversión.</h2>
+          <p class="lead">
+            Los primeros 30 días importan. Resuelva lo esencial temprano. Guarde documentos y cree un sistema simple de mantenimiento.
+          </p>
+
+          <div class="grid2">
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Lista para la primera semana</div>
+              <ul class="checklist">
+                <li>Cambiar cerraduras y códigos de garaje.</li>
+                <li>Configurar servicios y confirmar facturación.</li>
+                <li>Ubicar llave de agua y panel eléctrico.</li>
+                <li>Crear carpeta para garantías y recibos.</li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <div style="font-weight:700; margin-bottom:8px;">Mantenimiento básico</div>
+              <ul class="checklist">
+                <li>Cambiar filtros HVAC cada 1 a 3 meses.</li>
+                <li>Probar detectores de humo y CO cada mes.</li>
+                <li>Dar servicio a sistemas según recomendación.</li>
+                <li>Revisar exterior por temporada y anotar detalles.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="callout">
+            <div style="font-weight:700; margin-bottom:6px;">Empiece su plan</div>
+            <div>
+              Para su plan de compra y recomendación de prestamista, llame o envíe texto al 346 303 0139.
+            </div>
+          </div>
+
+          <div class="card">
+            <div style="font-weight:700; margin-bottom:8px;">Contacto</div>
+            <div>Rose Zaldivar</div>
+            <div>Brokered by The Agency Team</div>
+            <div>Teléfono. 346 303 0139</div>
+            <div>Zonas. Richmond, Fulshear, Cinco Ranch, Houston</div>
+
+            <div class="footer-note">
+              Información con fines educativos. Verifique detalles legales, fiscales y de préstamo con profesionales autorizados.
+            </div>
+          </div>
+        </main>
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>
